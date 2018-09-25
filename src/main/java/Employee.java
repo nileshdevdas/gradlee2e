@@ -1,14 +1,34 @@
 
 public class Employee {
 
-    private long empid; 
-
-    public void setEmpid(long empid){
-        this.empid=empid;
-    }
-
-    public long getEmpid(){
-        return this.empid;
-    }
+	private long id; 
+	private String name; 
+	private String email; 
+	private String country;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	} 
+	
 
 }
