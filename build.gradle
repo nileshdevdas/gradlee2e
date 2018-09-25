@@ -4,13 +4,17 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
+plugins {
+  id "org.sonarqube" version "2.6.2"
+}
 
 // this will handle java application
 apply plugin:  'java'
 // this pluing will add to coverage reports ......
 apply plugin: "jacoco"
 // this plugin will code sanity
-apply plugin: "sonarqube"
+apply plugin: "org.sonarqube"
+apply plugin: "maven"
 dependencies {
 	testCompile group: 'junit', name: 'junit', version: '4.12'
 }
@@ -41,6 +45,18 @@ jacocoTestReport {
 }
 
 
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://localhost:8081/repository/gwdemo/") {
+             	authentication(userName: "admin", password: "admin123")
+			 }
+             pom.version = "1.0-SNAPSHOT"
+             pom.artifactId = "simple-project"
+             pom.groupId = "com.example"
+       }
+    }
+}
 
 
 
