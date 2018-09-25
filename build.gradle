@@ -5,7 +5,54 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
+// this will handle java application
 apply plugin:  'java'
+// this pluing will add to coverage reports ......
+apply plugin: "jacoco"
+// this plugin will code sanity
+apply plugin: "sonarqube"
+dependencies {
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+repositories{
+      mavenCentral()
+}
+
+
+test {
+    reports {
+        junitXml.enabled = true
+        html.enabled = true
+    }               
+}
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+// to run you gradlew jacocoTestReport // html and the custom 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 task  hello{
      // this is the configuration areas 

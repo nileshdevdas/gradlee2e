@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EmployeeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-09-25T06:53:23" hostname="DESKTOP-1L38NVA" time="0.005">
+  <properties/>
+  <testcase name="testGetEmail" classname="EmployeeTest" time="0.003"/>
+  <testcase name="testGetId" classname="EmployeeTest" time="0.0"/>
+  <testcase name="testSetId" classname="EmployeeTest" time="0.0"/>
+  <testcase name="testGetName" classname="EmployeeTest" time="0.0"/>
+  <testcase name="testSetName" classname="EmployeeTest" time="0.0"/>
+  <testcase name="testSetEmail" classname="EmployeeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
